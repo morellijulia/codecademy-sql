@@ -1,0 +1,8 @@
+select 
+  strftime('%H', timestamp) as 'Hour',
+  round(avg(score)) as 'Average Score',
+  count(*) as 'Number of Stories'
+from hacker_news
+where timestamp is not null
+group by 1
+order by 1;
